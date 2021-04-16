@@ -35,6 +35,7 @@ app.use((req, res, next) => {
 //routes
 
 app.use(require('./routes'));
+app.use('/agregarEmpleado', require('./routes/agregarEmpleado'));
 
 //public 
 
