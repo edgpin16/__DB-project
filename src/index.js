@@ -36,6 +36,7 @@ app.use((req, res, next) => {
 
 app.use(require('./routes'));
 app.use('/agregarEmpleado', require('./routes/agregarEmpleado'));
+app.use('/agregarFarmacia', require('./routes/agregarFarmacia'));
 
 //public 
 
