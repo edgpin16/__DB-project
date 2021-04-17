@@ -7,8 +7,22 @@ router.get('/agregar', (req, res) => {
     res.render('farmacia/agregar');
 });
 
-router.post('/agregar', (req, res) => {
+router.post('/agregar', async (req, res) => {
+    const {nombre, ciudad, provincia, extension} = req.body;
+    const newFarmacia = {
+        nombre, 
+        ciudad,
+        provincia,
+        extension,
+    }
+    console.log(newFarmacia);
+    await pool.query('INSERT INTO farmacia set ?', [newFarmacia]);
     res.send('recibido farmacia');
+});
+
+router.get('/', async(req, res) => {
+    const farmacias = await pool.query('SELECT * FROM farmacia');
+    res.render('farmacia/list', {farmacias});
 });
 
 module.exports = router;

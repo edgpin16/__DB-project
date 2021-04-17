@@ -1,0 +1,22 @@
+<div class="container p-4">
+    <div class="row justify-content-center align-items-center minh-100">
+		<span class="contact100-form-title" style="margin: 0 auto;">
+			Listado de farmacias
+		</span>
+    </div>
+    <div class="row">
+        {{#each farmacias}}
+        <div class="col-md-3">
+            <div class="card text-center">
+                <div class="card-body">
+                    <p class="m-2 contact80-form-title">Nombre: {{nombre}}</p>
+                    <p class="m-2">ID: {{ID}}</p>
+                    <p class="m-2">Ciudad: {{ciudad}}</p>
+                    <p class="m-2">Provincia: {{provincia}}</p>
+                    <p class="m-2">Extension: {{extension}}</p>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>
