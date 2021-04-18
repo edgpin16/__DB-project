@@ -1,0 +1,41 @@
+<div class="container-contact100">
+	<div class="wrap-contact100">
+		<form class="contact100-form validate-form" action="/monodroga/agregar" method="POST">
+			<span class="contact100-form-title">
+				Agregar monodroga
+			</span>
+
+			<div class="wrap-input100 input100-select">
+				<span class="label-input100">Selecciona un medicamento</span>
+				<div class="form-check">
+					{{#each medicamentos}}
+					<div>
+						<input class="form-check-input" type="radio" name="n_serial_medicamento" id="ID" value={{n_serial}}>
+						<label class="form-check-label" for="ID">
+							{{nombre_medicamento}} {{presentacion}}
+						</label>
+					</div>
+					{{/each}}
+				</div>
+			</div>
+
+			<div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+				<span class="label-input100">Nombre de la monodroga</span>
+				<input class="input100" type="text" name="nombre_monodroga" placeholder="Ingresa el nombre de la monodroga">
+				<span class="focus-input100"></span>
+			</div>
+
+			<div class="container-contact100-form-btn">
+				<div class="wrap-contact100-form-btn">
+					<div class="contact100-form-bgbtn"></div>
+					<button class="contact100-form-btn">
+						<span>
+							Submit
+							<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+						</span>
+					</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
