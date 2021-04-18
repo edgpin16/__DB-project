@@ -52,6 +52,7 @@ app.use('/empleado', require('./routes/empleado'));
 app.use('/farmacia', require('./routes/farmacia'));
 app.use('/medicamento', require('./routes/medicamento'));
 app.use('/monodroga', require('./routes/monodroga'));
+app.use('/laboratorio', require('./routes/laboratorio'));
 
 //public 
 
