@@ -48,8 +48,8 @@ app.use((req, res, next) => {
 //routes
 
 app.use(require('./routes'));
-app.use('/agregarEmpleado', require('./routes/agregarEmpleado'));
-app.use('/agregarFarmacia', require('./routes/agregarFarmacia'));
+app.use('/empleado', require('./routes/empleado'));
+app.use('/farmacia', require('./routes/farmacia'));
 
 //public 
 

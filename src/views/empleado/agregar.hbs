@@ -1,74 +1,75 @@
-	<div class="container-contact100">
-		<div class="wrap-contact100">
-			<form class="contact100-form validate-form" action="/agregarEmpleado/agregar" method="POST">
-				<span class="contact100-form-title">
-					Agregar empleado
-				</span>
+<div class="container-contact100">
+	<div class="wrap-contact100">
+		<form class="contact100-form validate-form" action="/empleado/agregar" method="POST">
+			<span class="contact100-form-title">
+				Agregar empleado
+			</span>
 
-				<div class="wrap-input100 validate-input" data-validate="Name is required">
-					<span class="label-input100">Nombre</span>
-					<input class="input100" type="text" name="name" placeholder="Ingresa el nombre">
-					<span class="focus-input100"></span>
-				</div>
-
-				<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-					<span class="label-input100">Apellido paterno</span>
-					<input class="input100" type="text" name="apellidoPaterno" placeholder="Ingresa el apellido paterno">
-					<span class="focus-input100"></span>
-				</div>
-
-				<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-					<span class="label-input100">Apellido materno</span>
-					<input class="input100" type="text" name="apellidoMaterno" placeholder="Ingresa el apellido materno">
-					<span class="focus-input100"></span>
-				</div>
-
-				<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-					<span class="label-input100">Cédula de identidad</span>
-					<input class="input100" type="text" name="CI" placeholder="Ingresa la cédula de identidad (Números)">
-					<span class="focus-input100"></span>
-				</div>
-
-				<div class="wrap-input100 input100-select">
-					<span class="label-input100">Ingresa el tipo de empleado</span>
+			<div class="wrap-input100 input100-select">
+				<span class="label-input100">Farmacia donde trabaja</span>
+				<div class="form-check">
+					{{#each farmacias}}
 					<div>
-						<select class="selection-2" name="categoriaEmpleado">
-                            <option>Selecciona</option>
-							<option>General/otro</option>
-							<option>Administrativo</option>
-							<option>Auxiliar farmacia</option>
-							<option>Analista</option>
-							<option>Farmaceutico</option>
-                            <option>Pasante</option>
-						</select>
+						<input class="form-check-input" type="radio" name="ID_Farmacia" id="ID" value={{ID}}>
+						<label class="form-check-label" for="ID">
+							{{nombre}} ({{ciudad}})
+						</label>
 					</div>
-					<span class="focus-input100"></span>
+					{{/each}}
 				</div>
+			</div>
 
-				<div class="wrap-input100 input100-select">
-					<span class="label-input100">Farmacia donde trabaja</span>
-					<div>
-						<select class="selection-2" name="Farmacia">
-							<option>Selecciona</option>
-							<option>1500 $</option>
-							<option>2000 $</option>
-							<option>2500 $</option>
-						</select>
-					</div>
-					<span class="focus-input100"></span>
-				</div>
+			<div class="wrap-input100 validate-input" data-validate="Name is required">
+				<span class="label-input100">Nombre</span>
+				<input class="input100" type="text" name="nombre" placeholder="Ingresa el nombre">
+				<span class="focus-input100"></span>
+			</div>
 
-				<div class="container-contact100-form-btn">
-					<div class="wrap-contact100-form-btn">
-						<div class="contact100-form-bgbtn"></div>
-						<button class="contact100-form-btn">
-							<span>
-								Submit
-								<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
-							</span>
-						</button>
+			<div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+				<span class="label-input100">Apellido paterno</span>
+				<input class="input100" type="text" name="apellido_paterno" placeholder="Ingresa el apellido paterno">
+				<span class="focus-input100"></span>
+			</div>
+
+			<div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+				<span class="label-input100">Apellido materno</span>
+				<input class="input100" type="text" name="apellido_materno" placeholder="Ingresa el apellido materno">
+				<span class="focus-input100"></span>
+			</div>
+
+			<div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+				<span class="label-input100">Cédula de identidad</span>
+				<input class="input100" type="number" name="CI" placeholder="Ingresa la cédula de identidad (Números)">
+				<span class="focus-input100"></span>
+			</div>
+
+			<div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+				<span class="label-input100">Salario</span>
+				<input class="input100" type="number" name="salario" placeholder="Ingresa el salario (Números)">
+				<span class="focus-input100"></span>
+			</div>
+
+			<div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+				<span class="label-input100">Fecha de nacimiento</span>
+				<input class="input100" type="datetime" name="" placeholder="Ingresa la fecha de nacimiento" disabled>
+				<div class="form-group row">
+					<div class="col-10">
+						<input class="form-control" type="date" value="" id="example-date-input" name="fecha_nacimiento">
 					</div>
 				</div>
-			</form>
-		</div>
+			</div>
+
+			<div class="container-contact100-form-btn">
+				<div class="wrap-contact100-form-btn">
+					<div class="contact100-form-bgbtn"></div>
+					<button class="contact100-form-btn">
+						<span>
+							Submit
+							<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+						</span>
+					</button>
+				</div>
+			</div>
+		</form>
 	</div>
+</div>
