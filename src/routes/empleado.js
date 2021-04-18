@@ -26,6 +26,36 @@ router.post('/agregar', async (req, res) => {
             salario,
         }
         await pool.query('INSERT INTO empleado set ?', [newEmployee]);
+
+        const {cargo} = req.body;
+        switch (cargo){
+            case 'analista' : {
+                const newEmployeeAnalista = {
+                    CI_Empleado: CI,
+                }
+                await pool.query('INSERT INTO analista set ?', [newEmployeeAnalista]);
+                console.log('Es un analista');
+                break;
+            }
+
+            case 'auxiliarFarmacia' : {
+                const newEmployeeAuxFarmacia = {
+                    CI_Empleado: CI,
+                }
+                await pool.query('INSERT INTO auxiliar_farmacia set ?', [newEmployeeAuxFarmacia]);
+                console.log('Es un auxiliar');
+                break;
+            }
+
+            case 'administrativo' : {
+                const newEmployeeAdmin = {
+                    CI_Empleado: CI,
+                }
+                await pool.query('INSERT INTO administrativo set ?', [newEmployeeAdmin]);
+                console.log('Es un administrativo');
+                break;
+            }
+        }
         req.flash('success', 'Empleado agregado correctamente');
         res.send('recibido');
     }
