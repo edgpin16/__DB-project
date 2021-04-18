@@ -50,6 +50,7 @@ app.use((req, res, next) => {
 app.use(require('./routes'));
 app.use('/empleado', require('./routes/empleado'));
 app.use('/farmacia', require('./routes/farmacia'));
+app.use('/medicamento', require('./routes/medicamento'));
 
 //public 
 
