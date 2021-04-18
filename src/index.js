@@ -53,6 +53,7 @@ app.use('/farmacia', require('./routes/farmacia'));
 app.use('/medicamento', require('./routes/medicamento'));
 app.use('/monodroga', require('./routes/monodroga'));
 app.use('/laboratorio', require('./routes/laboratorio'));
+app.use('/telefono_laboratorio', require('./routes/telefonoLaboratorio'));
 
 //public 
 
