@@ -17,6 +17,7 @@ router.post('/agregar', async (req, res) => {
     }
     console.log(newFarmacia);
     await pool.query('INSERT INTO farmacia set ?', [newFarmacia]);
+    req.flash('success', 'Farmacia agregada correctamente');
     res.send('recibido farmacia');
 });
 

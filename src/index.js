@@ -2,6 +2,11 @@ const express = require('express');
 const morgan = require('morgan');
 const expressHBS = require('express-handlebars');
 const path = require('path');
+const flash = require('connect-flash');
+const session = require('express-session');
+const mysqlStore = require('express-mysql-session');
+
+const {database} = require('./keys');
 
 //initializations
 
@@ -22,6 +27,13 @@ app.set('view engine', '.hbs');
 
 //middlewares
 
+app.use(session({
+    secret: 'DatabaseProject',
+    resave: 'false',
+    saveUninitialized: 'false',
+    store: new mysqlStore(database),
+}));
+app.use(flash());
 app.use(morgan('dev'));
 app.use(express.urlencoded({extended : false}));
 app.use(express.json());
@@ -29,6 +41,7 @@ app.use(express.json());
 //global variables
 
 app.use((req, res, next) => {
+    app.locals.success = req.flash('success');
     next();
 });
 
