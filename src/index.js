@@ -55,6 +55,7 @@ app.use('/monodroga', require('./routes/monodroga'));
 app.use('/laboratorio', require('./routes/laboratorio'));
 app.use('/telefono_laboratorio', require('./routes/telefonoLaboratorio'));
 app.use('/produccion_medicinas', require('./routes/produccionMedicinas'));
+app.use('/solicitud_pedido', require('./routes/solicitudPedido'));
 
 //public 
 
