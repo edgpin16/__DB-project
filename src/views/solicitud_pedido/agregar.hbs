@@ -1,6 +1,6 @@
 <div class="container-contact100">
 	<div class="wrap-contact100">
-		<form class="contact100-form validate-form" action="/solicitud_pedido/agregar" method="POST">
+		<form class="contact100-form validate-form" action="/solicitud_pedido/agregarAnalista" method="GET">
 			<span class="contact100-form-title">
 				Agregar solicitudes de pedidos de farmacias a laboratorios
 			</span>
@@ -21,10 +21,8 @@
 			</div>
             </div>
 
-            <div>
 			<div class="wrap-input100 input100-select">
 				<span class="label-input100">Selecciona el laboratorio</span>
-                <div>
 				<div class="form-check">
 					{{#each laboratorios}}
 					<div>
@@ -37,28 +35,7 @@
 					</div>
 					{{/each}}
 				</div>
-                </div>
 			</div>
-            </div>
-
-            <div>
-			<div class="wrap-input100 input100-select">
-				<span class="label-input100">Selecciona el analista</span>
-				<div class="form-check">
-					{{#each analistas}}
-					<div>
-						<input class="form-check-input" type="radio" name="CI_Analista" id="ID" value={{CI}}>
-						<label class="form-check-label" for="ID">
-							{{nombre}} {{apellido_paterno}}
-                            {{!-- Me voy a bañar, pero una idea que tengo es, guardar
-                            LA CI del empleado analista, y luego consultarlo en la bd el id de farmacia
-                            y luego compararlo --}}
-						</label>
-					</div>
-					{{/each}}
-				</div>
-			</div>
-            </div>
 
 			<div class="container-contact100-form-btn">
 				<div class="wrap-contact100-form-btn">

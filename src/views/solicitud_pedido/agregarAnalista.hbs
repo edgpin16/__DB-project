@@ -1,0 +1,90 @@
+<div class="container-contact100">
+	<div class="wrap-contact100">
+		<form class="contact100-form validate-form" action="/solicitud_pedido/agregarAnalista" method="POST">
+			<span class="contact100-form-title">
+				Agregar analista
+			</span>
+
+            <div>
+			<div class="wrap-input100 input100-select">
+				<span class="label-input100">Farmacia Seleccionada:</span>
+				<div class="form-check">
+					{{#each farmacia}}
+					<div>
+						<input class="form-check-input" type="radio" name="ID_Farmacia" id="ID" value={{ID}} checked>
+						<label class="form-check-label" for="ID">
+							{{nombre}} {{ciudad}}
+						</label>
+					</div>
+					{{/each}}
+				</div>
+			</div>
+            </div>
+
+			<div class="wrap-input100 input100-select">
+				<span class="label-input100">Laboratorio Seleccionado: </span>
+				<div class="form-check">
+					{{#each laboratorio}}
+					<div>
+                        <div>
+						<input class="form-check-input" type="radio" name="ID_Laboratorio" id="ID" value={{ID}} checked>
+						<label class="form-check-label" for="ID">
+							{{nombre}} ubicación: {{pais}} {{provincia}} {{ciudad}}
+						</label>
+                        </div>
+					</div>
+					{{/each}}
+				</div>
+			</div>
+
+			<div class="wrap-input100 input100-select">
+				<span class="label-input100">Selecciona un analista: </span>
+				<div class="form-check">
+					{{#each analistasFarmacia}}
+					<div>
+                        <div>
+						<input class="form-check-input" type="radio" name="analista" id="ID" value={{nombre}}>
+						<label class="form-check-label" for="ID">
+							{{nombre}} {{apellido_paterno}} {{CI}}
+						</label>
+                        </div>
+					</div>
+					{{/each}}
+				</div>
+			</div>
+
+			<div class="wrap-input100 input100-select">
+				<span class="label-input100">Selecciona el tipo de pago</span>
+				<div class="form-check">
+					<div>
+                        <div>
+						<input class="form-check-input" type="radio" name="tipo_pago" id="ID" value="decontado">
+						<label class="form-check-label" for="ID">
+							Decontado
+						</label>
+                        </div>
+					</div>
+					<div>
+                        <div>
+						<input class="form-check-input" type="radio" name="tipo_pago" id="ID" value="credito">
+						<label class="form-check-label" for="ID">
+							Crédito
+						</label>
+                        </div>
+					</div>
+				</div>
+			</div>
+
+			<div class="container-contact100-form-btn">
+				<div class="wrap-contact100-form-btn">
+					<div class="contact100-form-bgbtn"></div>
+					<button class="contact100-form-btn">
+						<span>
+							Submit
+							<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+						</span>
+					</button>
+				</div>
+			</div>
+	</div>
+</div>
