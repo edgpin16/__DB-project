@@ -1,0 +1,50 @@
+<div class="container-contact100">
+    <div class="wrap-contact100">
+        <form class="contact100-form validate-form" action="/productos_solicitados/modificarProducto" method="POST">
+            <span class="contact100-form-title">
+                Ingresa la cantidad
+            </span>
+            {{#each simulacionProducto}}
+            <div class="wrap-input100 input100-select">
+                <!--<span class="label-input100">Selecciona un pedido</span>-->
+                <div class=" validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                    <span class="label-input100">Nombre: </span>
+                    <input class="input100" type="text" name="nombre"
+                        value= {{nombre}} readonly>
+                    <span class="focus-input100"></span>
+                </div>
+            </div>
+            <div class="wrap-input100 input100-select">
+                <!--<span class="label-input100">Selecciona un pedido</span>-->
+                <div class=" validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                    <span class="label-input100">Cantidad: </span>
+                    <input class="input100" type="number" name="cantidad"
+                        value= {{cantidad}}>
+                    <span class="focus-input100"></span>
+                </div>
+            </div>
+            <div class="wrap-input100 input100-select">
+                <!--<span class="label-input100">Selecciona un pedido</span>-->
+                <div class=" validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                    <span class="label-input100">Precio: </span>
+                    <input class="input100" type="text" name="precio"
+                        value= {{costo}} readonly>
+                    <span class="focus-input100"></span>
+                </div>
+            </div>
+            {{/each}}
+
+            <div class="container-contact100-form-btn">
+                <div class="wrap-contact100-form-btn">
+                    <div class="contact100-form-bgbtn"></div>
+                    <button class="contact100-form-btn">
+                        <span>
+                            Submit
+                            <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
